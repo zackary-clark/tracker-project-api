@@ -27,7 +27,6 @@ module Authentication
     new_token
   end
 
-  # FIXME: Do I need to validate that token doesn't exist? (improbable)
   def set_token
     self.token = SecureRandom.hex(16)
   end
@@ -39,7 +38,6 @@ module Authentication
 
   # expire old token
   def fix_up_token
-    # FIXME: token age should be configurable
     new_token if updated_at < 7.days.ago
   end
 
