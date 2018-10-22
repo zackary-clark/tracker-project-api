@@ -7,7 +7,6 @@ curl "http://localhost:4741/maxes" \
     --header "Authorization: Token token=${TOKEN}" \
     --data '{
         "max": {
-            "user_id": 2,
             "random": "this should be ignored",
             "date": "'"${DATE}"'",
             "squat1RM": "'"${MAX}"'",

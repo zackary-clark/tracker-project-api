@@ -2,9 +2,8 @@ class MaxesController < ProtectedController
   before_action :set_max, only: [:show, :update, :destroy]
 
   # GET /maxes
-  # TODO remove index from maxes when testing is done, or change to get all for current user
   def index
-    @maxes = Max.all
+    @maxes = current_user.maxes
 
     render json: @maxes
   end
@@ -31,7 +30,7 @@ class MaxesController < ProtectedController
       render json: @max
     else
       render json: @max.errors, status: :unprocessable_entity
-    end
+    end         
   end
 
   # DELETE /maxes/1
